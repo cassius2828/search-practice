@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import tachyons from 'tachyons';
+import { Card } from './components/Card';
+import {Display} from './components/Display';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<InfiniteScroll
+dataLength={10}
+height='40rem'
+style={{width: '90vw', border: 'solid 3px lime'}}
+> <Display/></InfiniteScroll>
+   
+
     </div>
   );
 }
