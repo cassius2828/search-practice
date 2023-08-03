@@ -17,27 +17,31 @@ export const Display = () => {
     }
   };
 
+  console.log(heroData);
+
   useEffect(() => {
     fetchHeros();
   }, []);
-  console.log(heroData);
 
-    const fullList = heroData.data.map(({name, id, images, biography}) => {
-      return (
-        <>
-          <Card
-            key={id}
-            image={images.lg}
-            character={name}
-            publisher={biography.publisher}
-          />
-        </>
-      );
-    });
   return (
     <div className="scroll-container">
       {/* name, id, images.lg, biography.publisher, biography.alignment */}
-      {fullList}
+      {heroData.data ? (
+        heroData.data.map(({ name, id, images, biography }) => {
+          return (
+            <>
+              <Card
+                key={id}
+                image={images.lg}
+                character={name}
+                publisher={biography.publisher}
+              />
+            </>
+          );
+        })
+      ) : (
+        <h1>Loading</h1>
+      )}
     </div>
   );
 };
