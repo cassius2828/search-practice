@@ -1,6 +1,7 @@
 /* App styles */
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
@@ -39,4 +40,14 @@
   gap: 1rem;
   margin: 1rem;
   
+}
+
+
+/* search-box  */
+
+#search-box {
+  width: 10rem;
+  height: 2rem;
+  margin-bottom: 2rem;
+
 }
